@@ -32,7 +32,7 @@ const Home = () => {
     <>
       <div className="home-body">
         <Navbar />
-        <div className="music-list pt-4">
+        <div className="music-list pt-2 pt-md-4 pb-4">
           {isLoading ? (
             // Display loading gif
             <img src={loadingGif} alt="Loading svg animation" />

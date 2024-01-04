@@ -30,6 +30,13 @@ button.search-btn {
 }
 
 @media (max-width:768px) {
+    .navbar .container-fluid {
+        /* position: relative; */
+        display: block !important;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
     .search-input {
         width: 100% !important;
     }
