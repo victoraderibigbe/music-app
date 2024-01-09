@@ -34,7 +34,7 @@ const Home = () => {
     <>
       <div className="home-body">
         <Navbar data={data} setSearchResults={setSearchResults} />
-        <div className="music-list pt-2 pt-md-4 pb-4">
+        <div className="music-list pt-3 pt-md-5 pb-4">
           {isLoading ? (
             // Display loading gif
             <img src={loadingGif} alt="Loading svg animation" />

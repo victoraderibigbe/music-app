@@ -46,11 +46,11 @@ button.search-btn {
     }
 
     a.navbar-brand {
-        font-size: 120% !important;
+        font-size: 100% !important;
     }
 
     .search-input {
         width: 100% !important;
-        height: 20px;
+        height: 15px;
     }
 }
