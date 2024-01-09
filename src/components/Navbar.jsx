@@ -1,20 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "../components/Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ data, setSearchResults }) => {
+  const handleSearchChange = (e) => {
+    const searchInput = e.target.value;
+    data.filter((result) => {
+      if (
+        searchInput.toLowerCase() == result.songTitle.toLowerCase() ||
+        searchInput.toLowerCase() == result.albumName.toLowerCase() ||
+        searchInput.toLowerCase() == result.artistName.toLowerCase()
+      ) {
+        console.log(result);
+        setSearchResults([result]);
+      }
+    });
+  };
+
   return (
     <>
       <nav className="navbar px-0 px-md-5 py-3">
         <div className="container-fluid">
           <a className="navbar-brand fs-2 fw-bold fst-italic">BytesNovaBeats</a>
-          <form className="d-flex search-form p-2" role="search">
+          <form className="d-flex search-form p-2">
             <input
               className="me-2 search-input"
               type="search"
               placeholder="Search by song, artist, album..."
               aria-label="Search"
+              onChange={handleSearchChange}
             />
-            <button className="search-btn" type="submit">
+            <button className="search-btn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
