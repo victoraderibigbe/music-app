@@ -1,19 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import "../components/Navbar.css";
 
 const Navbar = ({ data, setSearchResults }) => {
   const handleSearchChange = (e) => {
     const searchInput = e.target.value;
-    data.filter((result) => {
-      if (
-        searchInput.toLowerCase() == result.songTitle.toLowerCase() ||
-        searchInput.toLowerCase() == result.albumName.toLowerCase() ||
-        searchInput.toLowerCase() == result.artistName.toLowerCase()
-      ) {
-        console.log(result);
-        setSearchResults([result]);
-      }
-    });
+    if (searchInput != '') {
+      data.filter((result) => {
+        if (
+          searchInput.toLowerCase() == result.songTitle.toLowerCase() ||
+          searchInput.toLowerCase() == result.albumName.toLowerCase() ||
+          searchInput.toLowerCase() == result.artistName.toLowerCase()
+        ) {
+          console.log(result);
+          setSearchResults([result]);
+        }
+      });
+    }
+    else {
+      setSearchResults(data);
+    }
   };
 
   return (
