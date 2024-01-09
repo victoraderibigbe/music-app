@@ -10,7 +10,7 @@ const ListPage = ({ searchResults }) => {
     results
   ) : (
     <div>
-      <h2>No matching songs</h2>
+      <h2 className="text-danger">No matching songs!!!</h2>
     </div>
   );
   return <>{music}</>;

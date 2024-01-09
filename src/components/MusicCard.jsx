@@ -1,5 +1,4 @@
 import React from "react";
-import "../components/MusicCard.css"; // Import MusicCard component
 
 const MusicCard = ({ song }) => {
   return (

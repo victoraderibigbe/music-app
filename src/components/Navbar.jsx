@@ -1,23 +1,23 @@
 import React from "react";
-import "../components/Navbar.css";
 
 const Navbar = ({ data, setSearchResults }) => {
+  
   const handleSearchChange = (e) => {
-    const searchInput = e.target.value;
-    if (searchInput != '') {
-      data.filter((result) => {
-        if (
-          searchInput.toLowerCase() == result.songTitle.toLowerCase() ||
-          searchInput.toLowerCase() == result.albumName.toLowerCase() ||
-          searchInput.toLowerCase() == result.artistName.toLowerCase()
-        ) {
-          console.log(result);
-          setSearchResults([result]);
-        }
+    const searchInput = e.target.value.toLowerCase(); // Convert input to lowercase
+  
+    if (searchInput !== '') {
+      const filteredData = data.filter((result) => {
+        const songTitle = result.songTitle.toLowerCase();
+        const albumName = result.albumName.toLowerCase();
+        const artistName = result.artistName.toLowerCase();
+        const combinedText = `${songTitle} ${albumName} ${artistName}`;
+  
+        return combinedText.includes(searchInput);
       });
-    }
-    else {
-      setSearchResults(data);
+  
+      setSearchResults(filteredData);
+    } else {
+      setSearchResults(data); // Show all results if the search input is empty
     }
   };
 
