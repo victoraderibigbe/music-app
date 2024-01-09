@@ -2,6 +2,10 @@
 
 nav.navbar {
     background: #111111;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 a.navbar-brand {
